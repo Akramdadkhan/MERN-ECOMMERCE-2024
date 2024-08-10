@@ -21,6 +21,19 @@ const total = subTotal + tax + shippingCharges;
 const Cart = () => {
   const [couponCode, setCouponCode] = useState<string>("");
   const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
+  useEffect(() => {
+
+    const timeOutID = setTimeout(() => {
+      if(Math.random() > 0.5) setIsValidCouponCode(true);
+      else setIsValidCouponCode(false)
+     
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOutID);
+      setIsValidCouponCode(false);
+    };
+  }, [couponCode]);
   return (
     <div className="cart">
       <main>

@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 const Header = () => {
-  const user = { _id: "1", role: "admin" };
+  const user = { _id:1, role: "admin" };
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const logoutHandler =()=>{
     setIsOpen(false);
